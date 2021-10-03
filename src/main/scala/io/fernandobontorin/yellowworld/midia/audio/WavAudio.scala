@@ -16,6 +16,4 @@ class WavAudio(inputStream: InputStream) extends Audio {
     config.addFloatControl(floatControl)
     clip.start()
   }
-
-  override def clone(): WavAudio = new WavAudio(inputStream)
 }

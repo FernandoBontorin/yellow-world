@@ -1,6 +1,5 @@
-package io.fernandobontorin.yellowworld.midia.images
+package io.fernandobontorin.yellowworld.midia.driver
 
-import io.fernandobontorin.yellowworld.midia.ResourceCache
 import io.fernandobontorin.yellowworld.midia.tools.assets
 
 import java.awt.image.BufferedImage

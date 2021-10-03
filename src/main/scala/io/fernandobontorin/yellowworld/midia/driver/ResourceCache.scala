@@ -1,4 +1,4 @@
-package io.fernandobontorin.yellowworld.midia
+package io.fernandobontorin.yellowworld.midia.driver
 
 trait ResourceCache[A] {
 

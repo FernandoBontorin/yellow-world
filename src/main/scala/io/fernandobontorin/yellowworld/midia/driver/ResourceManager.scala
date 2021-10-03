@@ -1,7 +1,6 @@
-package io.fernandobontorin.yellowworld.midia
+package io.fernandobontorin.yellowworld.midia.driver
 
-import io.fernandobontorin.yellowworld.midia.audio.{Audio, SoundCache}
-import io.fernandobontorin.yellowworld.midia.images.ImageCache
+import io.fernandobontorin.yellowworld.midia.audio.Audio
 
 import java.awt.image.BufferedImage
 

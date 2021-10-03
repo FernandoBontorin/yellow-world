@@ -3,7 +3,7 @@ package io.fernandobontorin.yellowworld
 import io.fernandobontorin.yellowworld.core.{Display, Engine}
 import io.fernandobontorin.yellowworld.elements.ElementManager
 import io.fernandobontorin.yellowworld.game.{FPS, Game}
-import io.fernandobontorin.yellowworld.midia.ResourceManager
+import io.fernandobontorin.yellowworld.midia.driver.ResourceManager
 
 import java.awt.Dimension
 import javax.swing.{JFrame, WindowConstants}
@@ -27,7 +27,7 @@ object Main {
     frame.setVisible(true)
 
     threadEngine.start()
-    resourceManager.playSound("theme")
+    resourceManager.playSound("default-main-01")
 
     val fps = new FPS(frame)
   }

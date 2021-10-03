@@ -12,7 +12,4 @@ class MidiAudio(inputStream: InputStream) extends Audio {
     sequencer.setLoopCount(0)
     sequencer.start()
   }
-
-  override def clone(): MidiAudio = new MidiAudio(inputStream)
-
 }
