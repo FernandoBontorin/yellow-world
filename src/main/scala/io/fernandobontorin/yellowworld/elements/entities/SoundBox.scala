@@ -1,8 +1,8 @@
 package io.fernandobontorin.yellowworld.elements.entities
 
+import io.fernandobontorin.yellowworld.Main
 import io.fernandobontorin.yellowworld.core.engine.config
 import io.fernandobontorin.yellowworld.elements.Element
-import io.fernandobontorin.yellowworld.midia.images.cached.soundBox
 
 import java.awt.{Graphics, Point, Rectangle, Shape}
 
@@ -15,7 +15,7 @@ class SoundBox extends Element {
   override def tick(): Unit = {}
 
   override def draw(graphics: Graphics): Unit =
-    graphics.drawImage(soundBox, 0, 800 - 36, 128, 36, null)
+    graphics.drawImage(Main.resourceManager.getImage("box-sound"), 0, 800 - 36, 128, 36, null)
 
   override def isIn(point: Point): Boolean =
     elementForm.contains(point)

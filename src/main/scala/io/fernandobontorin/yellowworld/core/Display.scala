@@ -1,6 +1,6 @@
 package io.fernandobontorin.yellowworld.core
 
-import io.fernandobontorin.yellowworld.Start
+import io.fernandobontorin.yellowworld.Main
 import io.fernandobontorin.yellowworld.elements.tools.manager
 
 import java.awt.event.{MouseEvent, MouseListener}
@@ -27,7 +27,7 @@ class Display(dimension: Dimension) extends Canvas with Runnable with MouseListe
   }
 
   override def mouseClicked(e: MouseEvent): Unit = {
-    Start.engine.pushClick(e)
+    Main.engine.pushClick(e)
   }
 
   override def mousePressed(e: MouseEvent): Unit = {}

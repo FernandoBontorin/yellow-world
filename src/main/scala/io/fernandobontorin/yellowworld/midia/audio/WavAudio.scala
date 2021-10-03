@@ -5,7 +5,7 @@ import io.fernandobontorin.yellowworld.core.engine.config
 import java.io.{BufferedInputStream, InputStream}
 import javax.sound.sampled.{AudioSystem, FloatControl}
 
-class WavAudio(inputStream: InputStream) extends Thread {
+class WavAudio(inputStream: InputStream) extends Audio {
 
   override def run(): Unit = {
     val audioInputStream =

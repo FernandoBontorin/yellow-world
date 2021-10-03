@@ -5,7 +5,7 @@ import io.fernandobontorin.yellowworld.elements.animations.LostMMR
 import io.fernandobontorin.yellowworld.elements.tools.manager
 import io.fernandobontorin.yellowworld.game.provider
 import io.fernandobontorin.yellowworld.midia.audio.sound_board
-import io.fernandobontorin.yellowworld.midia.images.cached
+import io.fernandobontorin.yellowworld.midia.images.ImageCache
 
 import java.awt.{Graphics, Point, Rectangle, Shape}
 import java.util.concurrent.atomic.AtomicInteger

@@ -1,6 +1,6 @@
 package io.fernandobontorin.yellowworld.core
 
-import io.fernandobontorin.yellowworld.Start
+import io.fernandobontorin.yellowworld.Main
 import io.fernandobontorin.yellowworld.elements.tools.manager
 
 import java.awt.event.MouseEvent
@@ -28,7 +28,7 @@ class Engine() extends Runnable {
         }
       }
       manager.elements.foreach(_.tick())
-        Start.display.run()
+        Main.display.run()
       }
     }
 
