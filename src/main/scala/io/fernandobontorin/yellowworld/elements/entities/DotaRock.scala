@@ -2,7 +2,6 @@ package io.fernandobontorin.yellowworld.elements.entities
 
 import io.fernandobontorin.yellowworld.Main
 import io.fernandobontorin.yellowworld.elements.Element
-import io.fernandobontorin.yellowworld.game.provider
 
 import java.awt.image.BufferedImage
 import java.awt.{Graphics, Point, Rectangle, Shape}
@@ -29,6 +28,6 @@ class DotaRock extends Element {
 
   override def click(point: Point): Unit = {
     Main.resourceManager.playSound("coin")
-    provider.game.scoreBoard.enqueueTransaction(1.toDouble)
+    Main.game.scoreBoard.enqueueTransaction(1.toDouble)
   }
 }

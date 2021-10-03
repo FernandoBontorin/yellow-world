@@ -1,7 +1,7 @@
 package io.fernandobontorin.yellowworld.midia.audio
 
 import java.io.InputStream
-import javax.sound.midi.{MidiSystem, Sequence, Sequencer}
+import javax.sound.midi.{MidiSystem, Sequencer}
 
 class MidiAudio(inputStream: InputStream) extends Audio {
   val sequencer: Sequencer = MidiSystem.getSequencer
@@ -12,5 +12,7 @@ class MidiAudio(inputStream: InputStream) extends Audio {
     sequencer.setLoopCount(0)
     sequencer.start()
   }
+
+  override def clone(): MidiAudio = new MidiAudio(inputStream)
 
 }

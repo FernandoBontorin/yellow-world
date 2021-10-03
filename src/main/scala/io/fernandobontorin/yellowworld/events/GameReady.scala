@@ -1,22 +1,17 @@
 package io.fernandobontorin.yellowworld.events
 
+import io.fernandobontorin.yellowworld.Main
 import io.fernandobontorin.yellowworld.elements.Element
 import io.fernandobontorin.yellowworld.elements.animations.LostMMR
-import io.fernandobontorin.yellowworld.elements.tools.manager
-import io.fernandobontorin.yellowworld.game.provider
-import io.fernandobontorin.yellowworld.midia.audio.sound_board
-import io.fernandobontorin.yellowworld.midia.images.ImageCache
 
 import java.awt.{Graphics, Point, Rectangle, Shape}
 import java.util.concurrent.atomic.AtomicInteger
 import scala.math.{min, random}
 
-class GameReady extends Element with AutoCloseable {
-  {
-    sound_board.gameReady()
-  }
-  val amount: Double  = {
-    provider.game.scoreBoard.currentScore * min(scala.math.max(0.25, random()), 0.1)
+class GameReady extends Element {
+  Main.resourceManager.playSound("game-ready")
+  val amount: Double = {
+    Main.game.scoreBoard.currentScore * min(scala.math.max(0.25, random()), 0.1)
   }
   val ticksToAnim     = new AtomicInteger()
   val totalTicks: Int = 8 * 60
@@ -27,16 +22,13 @@ class GameReady extends Element with AutoCloseable {
 
   override def tick(): Unit =
     if (ticksToAnim.incrementAndGet() > totalTicks) {
-      manager.undo(this)
-      sound_board.lose()
-      close()
+      Main.resourceManager.playSound("lose")
+      die()
     }
-
-  override def close(): Unit = this.finalize()
 
   override def draw(graphics: Graphics): Unit =
     graphics.drawImage(
-      cached.gameReadyButton,
+      Main.resourceManager.getImage("game-ready-button"),
       x,
       y,
       240,
@@ -47,10 +39,10 @@ class GameReady extends Element with AutoCloseable {
   override def isIn(point: Point): Boolean = elementForm.contains(point)
 
   override def click(point: Point): Unit = {
-    sound_board.coin()
-    provider.game.scoreBoard.enqueueTransaction(amount)
+    Main.resourceManager.playSound("coin")
+    Main.game.scoreBoard.enqueueTransaction(amount)
     new LostMMR
-    manager.undo(this)
-    close()
+    die()
   }
+
 }

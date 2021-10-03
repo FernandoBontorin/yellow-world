@@ -1,13 +1,12 @@
 package io.fernandobontorin.yellowworld.elements.animations
 
 import io.fernandobontorin.yellowworld.elements.Element
-import io.fernandobontorin.yellowworld.elements.tools.manager
 
 import java.awt.{Color, Font, Graphics, Point}
 import java.util.concurrent.atomic.AtomicInteger
 import scala.math.{max, random}
 
-class LostMMR extends Element with AutoCloseable{
+class LostMMR extends Element {
   val amount: Double = 16 + (random() * 15).toInt
   val ticksToAnim = new AtomicInteger()
   val totalTicks: Int = 3*60
@@ -24,8 +23,7 @@ class LostMMR extends Element with AutoCloseable{
 
   override def tick(): Unit = {
     if(ticksToAnim.incrementAndGet() > totalTicks){
-      manager.undo(this)
-      close()
+      die()
     }
   }
 
@@ -38,8 +36,4 @@ class LostMMR extends Element with AutoCloseable{
   override def isIn(point: Point): Boolean = false
 
   override def click(point: Point): Unit = ???
-
-  override def close(): Unit = {
-    this.finalize()
-  }
 }

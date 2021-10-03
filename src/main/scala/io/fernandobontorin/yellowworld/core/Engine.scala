@@ -1,7 +1,6 @@
 package io.fernandobontorin.yellowworld.core
 
 import io.fernandobontorin.yellowworld.Main
-import io.fernandobontorin.yellowworld.elements.tools.manager
 
 import java.awt.event.MouseEvent
 import java.time.Instant
@@ -22,12 +21,12 @@ class Engine() extends Runnable {
         lastTick = current
       if (clickStack.nonEmpty) {
         val click = clickStack.pop()
-        val find  = manager.elements.find(e => e.isIn(click.getPoint))
+        val find  = Main.elementManager.currentElements.find(e => e.isIn(click.getPoint))
         if (find.nonEmpty) {
           find.get.click(click.getPoint)
         }
       }
-      manager.elements.foreach(_.tick())
+        Main.elementManager.currentElements.foreach(_.tick())
         Main.display.run()
       }
     }

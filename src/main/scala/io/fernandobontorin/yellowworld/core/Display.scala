@@ -1,7 +1,6 @@
 package io.fernandobontorin.yellowworld.core
 
 import io.fernandobontorin.yellowworld.Main
-import io.fernandobontorin.yellowworld.elements.tools.manager
 
 import java.awt.event.{MouseEvent, MouseListener}
 import java.awt.{Canvas, Color, Dimension, Graphics}
@@ -21,7 +20,7 @@ class Display(dimension: Dimension) extends Canvas with Runnable with MouseListe
       val graphics: Graphics = bs.getDrawGraphics
       graphics.setColor(Color.BLACK)
       graphics.fillRect(0, 0, dimension.width, dimension.height)
-      manager.elements.foreach(_.draw(graphics))
+      Main.elementManager.currentElements.foreach(_.draw(graphics))
       graphics.dispose()
       bs.show()
   }

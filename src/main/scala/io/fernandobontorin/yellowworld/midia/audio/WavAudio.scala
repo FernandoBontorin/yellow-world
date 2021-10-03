@@ -17,4 +17,5 @@ class WavAudio(inputStream: InputStream) extends Audio {
     clip.start()
   }
 
+  override def clone(): WavAudio = new WavAudio(inputStream)
 }

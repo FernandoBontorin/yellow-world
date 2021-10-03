@@ -1,13 +1,12 @@
 package io.fernandobontorin.yellowworld.elements.animations
 
 import io.fernandobontorin.yellowworld.elements.Element
-import io.fernandobontorin.yellowworld.elements.tools.manager
 
 import java.awt.{Color, Font, Graphics, Point}
 import java.util.concurrent.atomic.AtomicInteger
 import scala.math.{max, random}
 
-class ScoreChange(amount: Double) extends Element with AutoCloseable{
+class ScoreChange(amount: Double) extends Element {
   val ticksToAnim = new AtomicInteger()
   val totalTicks: Int = 3*60
   val font = new Font(Font.SANS_SERIF, Font.ITALIC, 18)
@@ -24,8 +23,7 @@ class ScoreChange(amount: Double) extends Element with AutoCloseable{
 
   override def tick(): Unit = {
     if(ticksToAnim.incrementAndGet() > totalTicks){
-      manager.undo(this)
-      close()
+      die()
     }
   }
 
@@ -38,8 +36,4 @@ class ScoreChange(amount: Double) extends Element with AutoCloseable{
   override def isIn(point: Point): Boolean = false
 
   override def click(point: Point): Unit = ???
-
-  override def close(): Unit = {
-    this.finalize()
-  }
 }
