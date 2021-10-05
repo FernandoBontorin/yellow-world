@@ -1,7 +1,7 @@
 package io.fernandobontorin.yellowworld.elements.entities
 
 import io.fernandobontorin.yellowworld.elements.Element
-import io.fernandobontorin.yellowworld.elements.animations.ScoreChange
+import io.fernandobontorin.yellowworld.elements.animated.ScoreChange
 
 import java.awt.{Color, Font, Graphics, Point}
 import scala.collection.mutable

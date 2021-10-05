@@ -1,4 +1,4 @@
-package io.fernandobontorin.yellowworld.elements.animations
+package io.fernandobontorin.yellowworld.elements.animated
 
 import io.fernandobontorin.yellowworld.elements.Element
 

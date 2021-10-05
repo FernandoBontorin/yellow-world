@@ -1,6 +1,6 @@
 package io.fernandobontorin.yellowworld.game
 
-import io.fernandobontorin.yellowworld.elements.entities.{DotaRock, ScoreBoard, SoundBox}
+import io.fernandobontorin.yellowworld.elements.entities.{DotaRock, Persona, ScoreBoard, SoundBox}
 import io.fernandobontorin.yellowworld.events.RandomEventGenerator
 
 class Game {
@@ -8,4 +8,5 @@ class Game {
   val soundBox = new SoundBox
   val scoreBoard = new ScoreBoard
   val eventsGenerator = new RandomEventGenerator
+  val persona = new Persona
 }

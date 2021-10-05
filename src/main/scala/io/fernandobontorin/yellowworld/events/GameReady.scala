@@ -2,7 +2,7 @@ package io.fernandobontorin.yellowworld.events
 
 import io.fernandobontorin.yellowworld.Main
 import io.fernandobontorin.yellowworld.elements.Element
-import io.fernandobontorin.yellowworld.elements.animations.LostMMR
+import io.fernandobontorin.yellowworld.elements.animated.LostMMR
 
 import java.awt.{Graphics, Point, Rectangle, Shape}
 import java.util.concurrent.atomic.AtomicInteger
@@ -28,7 +28,7 @@ class GameReady extends Element {
 
   override def draw(graphics: Graphics): Unit =
     graphics.drawImage(
-      Main.resourceManager.getImage("game-ready-button"),
+      Main.resourceManager.getImageProvider("game-ready-button").getImage(),
       x,
       y,
       240,

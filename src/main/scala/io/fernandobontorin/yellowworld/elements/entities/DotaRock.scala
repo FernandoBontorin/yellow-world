@@ -3,19 +3,17 @@ package io.fernandobontorin.yellowworld.elements.entities
 import io.fernandobontorin.yellowworld.Main
 import io.fernandobontorin.yellowworld.elements.Element
 
-import java.awt.image.BufferedImage
 import java.awt.{Graphics, Point, Rectangle, Shape}
 
 class DotaRock extends Element {
 
-  val elementForm: Shape       = new Rectangle(500 - 64, 500 - 64, 128, 128)
-  var logoState: BufferedImage = Main.resourceManager.getImage("dota2-logo")
+  val elementForm: Shape = new Rectangle(500 - 64, 500 - 64, 128, 128)
 
   override def tick(): Unit = {}
 
   override def draw(graphics: Graphics): Unit =
     graphics.drawImage(
-      logoState,
+      Main.resourceManager.getImageProvider("dota2-logo").getImage(),
       500 - 64,
       500 - 64,
       128,

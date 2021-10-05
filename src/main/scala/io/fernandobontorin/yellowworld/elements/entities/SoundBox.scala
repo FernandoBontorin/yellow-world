@@ -15,7 +15,7 @@ class SoundBox extends Element {
   override def tick(): Unit = {}
 
   override def draw(graphics: Graphics): Unit =
-    graphics.drawImage(Main.resourceManager.getImage("box-sound"), 0, 800 - 36, 128, 36, null)
+    graphics.drawImage(Main.resourceManager.getImageProvider("box-sound").getImage(), 0, 800 - 36, 128, 36, null)
 
   override def isIn(point: Point): Boolean =
     elementForm.contains(point)
