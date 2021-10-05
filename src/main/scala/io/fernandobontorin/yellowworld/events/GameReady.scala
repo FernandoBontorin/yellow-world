@@ -45,4 +45,5 @@ class GameReady extends Element {
     die()
   }
 
+  override def layer(): Int = 11
 }

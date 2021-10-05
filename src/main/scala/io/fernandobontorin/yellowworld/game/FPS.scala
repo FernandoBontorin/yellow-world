@@ -32,4 +32,6 @@ class FPS(frame: JFrame) extends Element{
   override def isIn(point: Point): Boolean = false
 
   override def click(point: Point): Unit = ???
+
+  override def layer(): Int = 1000
 }

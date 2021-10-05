@@ -4,7 +4,6 @@ import io.fernandobontorin.yellowworld.midia.images.{ImageProvider, LinkedImageP
 import io.fernandobontorin.yellowworld.midia.tools.assets
 import org.apache.commons.lang3.StringUtils
 
-import java.awt.Rectangle
 import scala.collection.mutable
 
 class ImageCache extends ResourceCache[ImageProvider] {
@@ -13,7 +12,7 @@ class ImageCache extends ResourceCache[ImageProvider] {
   {
     images.addOne(
       "dota2-logo",
-      new UniqueImageProvider(assets("images/dota2-logo.png"), new Rectangle(24, 16, 72, 72))
+      new UniqueImageProvider(assets("images/dota2-logo.png"))
     )
     images.addOne("box-sound", new UniqueImageProvider(assets("images/config/box-sound.png")))
     images.addOne("game-ready-button", new UniqueImageProvider(assets("images/events/dota-2-game-ready.jpg")))
@@ -26,6 +25,8 @@ class ImageCache extends ResourceCache[ImageProvider] {
         (0.04 * 1000 / (1000.0 / 60)).toInt
       )
     )
+    images.addOne("picareta", new UniqueImageProvider(assets("images/persona/picareta.png")))
+    images.addOne("heroes/oracle-icon", new UniqueImageProvider(assets("images/heroes/oracle-icon.png")))
   }
 
   override def query(s: String): ImageProvider =

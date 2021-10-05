@@ -27,5 +27,8 @@ class DotaRock extends Element {
   override def click(point: Point): Unit = {
     Main.resourceManager.playSound("coin")
     Main.game.scoreBoard.enqueueTransaction(1.toDouble)
+    Main.game.persona.tool.startAnimation(()=>print("rotate"))
   }
+
+  override def layer(): Int = 0
 }

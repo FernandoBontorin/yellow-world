@@ -12,22 +12,21 @@ class Display(dimension: Dimension) extends Canvas with Runnable with MouseListe
   }
 
   override def run(): Unit = {
-      if (this.getBufferStrategy == null) {
-        this.createBufferStrategy(3)
-      }
-      val bs = this.getBufferStrategy
+    if (this.getBufferStrategy == null) {
+      this.createBufferStrategy(3)
+    }
+    val bs = this.getBufferStrategy
 
-      val graphics: Graphics = bs.getDrawGraphics
-      graphics.setColor(Color.BLACK)
-      graphics.fillRect(0, 0, dimension.width, dimension.height)
-      Main.elementManager.currentElements.foreach(_.draw(graphics))
-      graphics.dispose()
-      bs.show()
+    val graphics: Graphics = bs.getDrawGraphics
+    graphics.setColor(Color.BLACK)
+    graphics.fillRect(0, 0, dimension.width, dimension.height)
+    Main.elementManager.currentElements.sortBy(_.layer()).foreach(_.draw(graphics))
+    graphics.dispose()
+    bs.show()
   }
 
-  override def mouseClicked(e: MouseEvent): Unit = {
+  override def mouseClicked(e: MouseEvent): Unit =
     Main.engine.pushClick(e)
-  }
 
   override def mousePressed(e: MouseEvent): Unit = {}
 

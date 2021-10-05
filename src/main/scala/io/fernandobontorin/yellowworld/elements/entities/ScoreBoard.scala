@@ -24,7 +24,7 @@ class ScoreBoard extends Element {
   override def draw(graphics: Graphics): Unit = {
     graphics.setColor(Color.orange)
     graphics.setFont(font)
-    graphics.drawString(f"Yellow cores: $score",       500 - 128,
+    graphics.drawString(f"Gold $score",       500 - 128,
       300 - 64)
   }
 
@@ -35,4 +35,6 @@ class ScoreBoard extends Element {
   override def isIn(point: Point): Boolean = false
 
   override def click(point: Point): Unit = ???
+
+  override def layer(): Int = 10
 }

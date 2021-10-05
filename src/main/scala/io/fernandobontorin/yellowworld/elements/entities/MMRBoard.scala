@@ -12,4 +12,6 @@ class MMRBoard extends Element{
   override def isIn(point: Point): Boolean = ???
 
   override def click(point: Point): Unit = ???
+
+  override def layer(): Int = 10
 }

@@ -28,4 +28,6 @@ class SoundBox extends Element {
       config.increaseDecibels()
     }
   }
+
+  override def layer(): Int = 0
 }
